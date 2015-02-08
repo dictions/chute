@@ -1,0 +1,18 @@
+.antialiased,
+%antialiased {
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: grayscale;	
+}
+
+//clearfix
+.clearfix:before,
+.clearfix:after,
+%clearfix:before,
+%clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after
+%clearfix:after {
+  clear:both;
+}
