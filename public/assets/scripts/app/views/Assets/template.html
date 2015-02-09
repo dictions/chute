@@ -1,0 +1,9 @@
+<ul>
+	<li v-repeat="assets">
+		<img v-attr="src: url + '/w/360'" v-asset="url">
+		<p>{{caption}}</p>
+		<p><img v-attr="src: account.avatar"> {{account.username}}</p>
+		<p>Likes: {{hearts}}</p>
+	</li>
+</ul>
+<button v-on="click: fetchNextPage">Fetch More Images</button>

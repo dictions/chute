@@ -4,11 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>Chute Engineering Challenge</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/assets/styles/css/main.css">
+	<script type="text/javascript" src="/assets/scripts/built/index.js" async></script>
 </head>
-<body>
-
-
-<script type="text/javascript" src="/assets/scripts/built/app.js"></script>
+<body id="app">
+	<div v-component="header" v-with="albumId: albumId"></div>
+	<div v-component="assets" v-with="albumId: albumId"></div>
 </body>
 </html>
