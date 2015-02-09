@@ -1,5 +1,7 @@
-<header>
+<header ch-media ch-header>
 	<img v-if="album.user" v-attr="src: album.user.avatar">
-	<h1 v-if="albumId">{{album.name}} - {{albumId}}</h1>
-	<p v-if="album.user">Created by {{album.user.username}} on {{album.created_at}}</p>
+	<div ch-media-content>
+		<h1 v-if="albumId">{{album.name}} - {{albumId}}</h1>
+		<p v-if="album.user">Created by {{album.user.username}} on {{album.created_at}}</p>
+	</div>
 </header>

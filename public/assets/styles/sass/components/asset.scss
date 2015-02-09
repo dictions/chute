@@ -1,12 +1,60 @@
+[ch-asset-container] {
+	margin: 0.5rem;
+	margin-bottom: 6rem;
+}
+
 [ch-asset] {
-	float: left;
-	width: 25%;
 	@include transition(300ms all ease);
+	overflow: hidden;
+	
+	img {
+		width: 100%;
+	}
+
+	[ch-asset-border] {
+		margin: 0.5rem;
+		border: 1px solid rgb(220, 220, 220);
+		overflow: hidden;
+		@include border-radius(3px);
+
+		> img {
+			border-bottom: 1px solid rgb(220, 220, 220);
+		}
+	}
+
+	[ch-asset-content] {
+		padding: 1rem;
+
+		> p {
+			margin-bottom: 1rem;
+		}
+	}
+	
+	[ch-asset-user] {
+		> img {
+			width: 2rem;
+		}
+	}
+
 
 	// Animations
 	&.v-enter,
 	&.v-leave { 
 		opacity: 0;
 		@include transform(translate3d(0, 100%, 0));
+	}
+
+	width: 100%;
+
+	@media (min-width: 480px) {
+		width: 50%;
+	}
+
+	@media (min-width: 768px) {
+		width: 33%;
+	}
+
+	@media (min-width: 1024px) {
+		width: 25%;
 	}
 }

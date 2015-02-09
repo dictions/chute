@@ -11,20 +11,21 @@
 @import "config/typography";
 
 // Base
-//@import "base/layout";
+@import "base/layout";
 @import "base/typography";
 // @import "base/chrome";
 // @import "base/interactions";
 
 // Repeating Components
 @import "components/asset";
+@import "components/media_block";
 //@import "components/buttons";
 //@import "components/media_blocks";
 //@import "components/forms";
 // @import "components/lists";
 
 // High Level Modules (eg: hero, footer, datepicker)
-// @import "modules/header";
+@import "modules/header";
 // @import "modules/callout";
 // @import "modules/team";
 

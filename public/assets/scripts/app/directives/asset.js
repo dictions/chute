@@ -1,10 +1,5 @@
 var Vue = require('vue');
 
-Vue.filter('hashtag', function(value) {
-	var regex = /#(\w*[a-zA-Z_]+\w*)/gim;
-	return value.replace(regex, '<b class="hashtag">#$1</b>');
-});
-
 module.exports = {
 	bind: function() {
 		var self = this;

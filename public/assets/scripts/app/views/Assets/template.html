@@ -1,9 +1,19 @@
-<ul class="clearfix">
-	<li v-repeat="assets" ch-asset v-transition>
-		<img v-attr="src: url + '/w/360'" v-asset="url: asset">
-		<p v-html="caption | hashtag"></p>
-		<p><img v-attr="src: account.avatar" v-asset="account.avatar: avatar"> {{account.username}}</p>
-		<p>Likes: {{hearts}}</p>
+<ul ch-asset-container>
+	<li v-repeat="assets" class="masonry-item" ch-asset v-transition>
+		<div ch-asset-border>
+			<img v-attr="src: url + '/w/200'" v-asset="url: asset">
+			<div ch-asset-content>
+
+				<p v-html="caption | caption | hashtag"></p>
+
+				<div ch-media ch-asset-user>
+					<img v-attr="src: account.avatar" v-asset="account.avatar: avatar">
+					<p ch-media-content>
+						{{account.username}}
+					</p>
+				</div>
+				<p>Likes: {{hearts}}</p>
+			</div>
+		</div>
 	</li>
 </ul>
-<button v-on="click: fetchNextPage">Fetch More Images</button>

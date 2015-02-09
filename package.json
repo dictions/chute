@@ -27,6 +27,7 @@
   "dependencies": {
     "components-webfontloader": "^1.5.2",
     "director": "^1.2.8",
+    "masonry-layout": "^3.2.1",
     "superagent": "^0.21.0",
     "vue": "^0.11.4"
   }
