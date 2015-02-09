@@ -2,17 +2,22 @@
 	overflow:hidden; 
 	_overflow:visible; 
 	zoom:1;
+	display: table;
 
 	> img {
 		float:left; 
-		margin-right: 10px;
+		margin-right: 1rem;
 		display: block;
 		@include border-radius(100rem);
+		display: table-cell;
+		vertical-align: middle;
 	}
 
 	[ch-media-content] {
 		overflow:hidden; 
 		_overflow:visible; 
 		zoom:1;
+		display: table-cell;
+		vertical-align: middle;
 	}
 }

@@ -1,7 +1,7 @@
 <header ch-media ch-header>
-	<img v-if="album.user" v-attr="src: album.user.avatar">
+	<img v-if="album.user" v-attr="src: album.user.avatar" style="width:4rem">
 	<div ch-media-content>
-		<h1 v-if="albumId">{{album.name}} - {{albumId}}</h1>
-		<p v-if="album.user">Created by {{album.user.username}} on {{album.created_at}}</p>
+		<h1 v-if="albumId">{{album.name}}</h1>
+		<p v-if="album.user">Created by <b>{{album.user.username}}</b> {{moment(album.created_at).fromNow()}}</p>
 	</div>
 </header>

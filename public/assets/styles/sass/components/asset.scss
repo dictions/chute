@@ -6,9 +6,43 @@
 [ch-asset] {
 	@include transition(300ms all ease);
 	overflow: hidden;
+
+	[ch-asset-image] {
+		position: relative;
+
+		> img {
+			width: 100%;
+			border-bottom: 1px solid rgb(220, 220, 220);
+		}
+
+		> p {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background: rgba(#2F3633, 0.9);
+			@include border-radius(100rem);
+			padding: 0.5rem 1rem;
+			vertical-align: middle;
+			color: white;
+
+			@include transform(translate3d(-50%, -40%, 0));
+			@include transition(200ms ease all);
+			opacity: 0;
+
+			img {
+				width: 1rem;
+				vertical-align: -2px;
+				margin-right: 0.5rem;
+			}
+
+			img span {
+				display: inline-block;
+			}
+		}
+	}
 	
-	img {
-		width: 100%;
+	[ch-asset-image] > img {
+		
 	}
 
 	[ch-asset-border] {
@@ -16,10 +50,7 @@
 		border: 1px solid rgb(220, 220, 220);
 		overflow: hidden;
 		@include border-radius(3px);
-
-		> img {
-			border-bottom: 1px solid rgb(220, 220, 220);
-		}
+		cursor: pointer;
 	}
 
 	[ch-asset-content] {
@@ -34,6 +65,10 @@
 		> img {
 			width: 2rem;
 		}
+
+		span {
+			padding-left: 1rem;
+		}
 	}
 
 
@@ -41,7 +76,18 @@
 	&.v-enter,
 	&.v-leave { 
 		opacity: 0;
-		@include transform(translate3d(0, 100%, 0));
+		@include transform(translate3d(0, 10%, 0));
+	}
+
+	&:hover {
+		[ch-asset-border] {
+			border: 1px solid rgb(180, 180, 180);
+		}
+
+		[ch-asset-image] p {
+			opacity: 1;
+			@include transform(translate3d(-50%,-50%,0));
+		}
 	}
 
 	width: 100%;

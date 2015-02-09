@@ -1,18 +1,28 @@
 <ul ch-asset-container>
 	<li v-repeat="assets" class="masonry-item" ch-asset v-transition>
 		<div ch-asset-border>
-			<img v-attr="src: url + '/w/200'" v-asset="url: asset">
+
+			<div ch-asset-image>
+				<img v-attr="src: url + '/w/200'" v-asset="url: asset">
+				<p>
+					<img src="/assets/images/heart.svg"> 
+					<span>{{hearts}}</span>
+				</p>
+			</div>
+
+
 			<div ch-asset-content>
 
 				<p v-html="caption | caption | hashtag"></p>
 
 				<div ch-media ch-asset-user>
 					<img v-attr="src: account.avatar" v-asset="account.avatar: avatar">
-					<p ch-media-content>
-						{{account.username}}
-					</p>
+					<b ch-media-content>
+						{{account.username}} 
+					</b>
+					<span ch-media-content>{{moment(created_at).fromNow()}}</span>
 				</div>
-				<p>Likes: {{hearts}}</p>
+				
 			</div>
 		</div>
 	</li>

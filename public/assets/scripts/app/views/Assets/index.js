@@ -1,5 +1,6 @@
 var Vue = require('vue');
 var Masonry = require('masonry-layout');
+var Moment = require('moment');
 
 
 Vue.filter('caption', function(value) {
@@ -40,12 +41,15 @@ module.exports = Vue.extend({
 							self.masonry.reloadItems();
 							self.masonry.layout();
 						});
-					}, i * 200);
+					}, i * 100);
 				}
 				for (var i = 0; i < newAssets.length; i++) {
 					animate(newAssets[i], i);
 				}
 			});
 		},
+		moment: function(date) {
+			return new Moment(date);
+		}
 	}
 })

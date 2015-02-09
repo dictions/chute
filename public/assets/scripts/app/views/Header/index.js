@@ -1,4 +1,5 @@
 var Vue = require('vue');
+var Moment = require('moment');
 
 module.exports = Vue.extend({
 	data: function() {
@@ -19,5 +20,8 @@ module.exports = Vue.extend({
 				self.album = window.app.data.album
 			});
 		},
+		moment: function(date) {
+			return new Moment(date);
+		}
 	}
 })
