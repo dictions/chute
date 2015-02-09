@@ -1,7 +1,15 @@
 module.exports = {
 	bind: function() {
+		var self = this;
 		this.el.addEventListener('error', function(e) {
-			console.log('ERRORRRRR');
+			switch (self.expression) {
+				case 'avatar':
+					self.el.src = '//placehold.it/100x100';
+					break;
+				case 'asset':
+					self.el.src = '//placehold.it/360x360';
+					break;
+			}
 		});
 	},
 	unbind: function() {
