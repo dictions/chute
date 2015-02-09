@@ -37,7 +37,7 @@ Store.prototype.fetchAssets = function(id, cb) {
 		self.assets = res.data;
 		self.currentPage = res.pagination.current_page;
 		self.nextPage = res.pagination.next_page;
-		if (cb) cb();
+		if (cb) cb(res.data);
 	});
 
 };
@@ -55,7 +55,7 @@ Store.prototype.fetchNextPage = function(id, cb) {
 			self.assets = self.assets.concat(res.data);
 			self.currentPage = res.pagination.current_page;
 			self.nextPage = res.pagination.next_page;
-			if (cb) cb();
+			if (cb) cb(res.data);
 		});
 	} else {
 		self.fetchAssets(id, cb);

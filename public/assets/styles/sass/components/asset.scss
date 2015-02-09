@@ -1,0 +1,12 @@
+[ch-asset] {
+	float: left;
+	width: 25%;
+	@include transition(300ms all ease);
+
+	// Animations
+	&.v-enter,
+	&.v-leave { 
+		opacity: 0;
+		@include transform(translate3d(0, 100%, 0));
+	}
+}

@@ -1,5 +1,5 @@
-<ul>
-	<li v-repeat="assets">
+<ul class="clearfix">
+	<li v-repeat="assets" ch-asset v-transition>
 		<img v-attr="src: url + '/w/360'" v-asset="url: asset">
 		<p v-html="caption | hashtag"></p>
 		<p><img v-attr="src: account.avatar" v-asset="account.avatar: avatar"> {{account.username}}</p>
