@@ -9,7 +9,7 @@ module.exports = {
 					self.el.src = 'http://images.ak.instagram.com/profiles/anonymousUser.jpg';
 					break;
 				case 'asset':
-					self.el.src = '//placehold.it/360x360';
+					self.el.src = '//placehold.it/360x360&text=Image+not+available';
 					break;
 			}
 		});

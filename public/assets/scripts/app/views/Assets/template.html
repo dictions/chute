@@ -1,5 +1,5 @@
 <ul ch-asset-container>
-	<li v-repeat="assets" class="masonry-item" ch-asset v-transition>
+	<li v-repeat="assets" class="masonry-item" ch-asset v-transition v-on="click: goToAsset(shortcut)">
 		<div ch-asset-border>
 
 			<div ch-asset-image>
@@ -28,10 +28,14 @@
 	</li>
 </ul>
 
-<div v-if="loading && !allLoaded" ch-asset-loaded>
+<div v-if="loading && !allLoaded" ch-asset-load>
 	<h1>Loading more images ...</h1>
 </div>
 
-<div v-if="allLoaded" ch-asset-loaded>
+<div v-if="allLoaded" ch-asset-load>
 	<h1>All images loaded</h1>
+</div>
+
+<div v-if="previewAsset" ch-asset-preview v-on="click: closePreview" v-transition>
+	<img v-attr="src: loadedAsset.url" v-if="previewAsset" v-asset="loadedAsset.url: asset" v-transition>
 </div>

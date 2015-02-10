@@ -24,11 +24,13 @@ module.exports = Vue.extend({
 		return {
 			assets: [],
 			loading: false,
+			loadedAsset: null,
 		};
 	},
 	template: require('./template.html'),
 	watch: {
-		albumId: 'fetchNextPage'
+		albumId: 'fetchNextPage',
+		previewAsset: 'fetchAsset',
 	},
 	ready: function() {
 
@@ -48,7 +50,7 @@ module.exports = Vue.extend({
 			var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 			var windowHeight = window.innerHeight|| html.clientHeight|| body.clientHeight;
 
-			if (window.pageYOffset + windowHeight >= height - 100 && !self.loading && !self.allLoaded) self.fetchNextPage();
+			if (window.pageYOffset + windowHeight >= height - 200 && !self.loading && !self.allLoaded) self.fetchNextPage();
 
 		}, 1000 / 4);
 	},
@@ -58,6 +60,15 @@ module.exports = Vue.extend({
 		}
 	},
 	methods: {
+
+		goToAsset: function(id) {
+			window.router.setRoute('/albums/' + this.albumId + '/' + id);
+		},
+
+		closePreview: function() {
+			this.loadedAsset = null;
+			window.router.setRoute('/albums/' + this.albumId);
+		},
 
 		fetchNextPage: function() {
 
@@ -84,6 +95,15 @@ module.exports = Vue.extend({
 
 				self.loading = false;
 			});
+		},
+
+		fetchAsset: function() {
+			var self = this;
+
+			if (this.previewAsset) window.app.data.fetchAsset(this.albumId, this.previewAsset, function(asset) {
+				self.loadedAsset = asset;
+			});
+
 		},
 
 		moment: function(date) {

@@ -9,6 +9,7 @@
 </head>
 <body id="app">
 	<div v-component="header" v-with="albumId: albumId, album: album"></div>
-	<div v-component="assets" v-with="albumId: albumId, imageCount: album.images_count"></div>
+	<div v-component="assets" 
+	v-with="albumId: albumId, imageCount: album.images_count, previewAsset: previewAsset"></div>
 </body>
 </html>

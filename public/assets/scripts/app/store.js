@@ -7,6 +7,7 @@ var Store = function() {
 	this.album = {};
 	this.user = {};
 	this.assets = [];
+	this.asset = {};
 	this.currentPage = 1;
 	this.nextPage = null;
 };
@@ -37,6 +38,20 @@ Store.prototype.fetchAssets = function(id, cb) {
 		self.assets = res.data;
 		self.currentPage = res.pagination.current_page;
 		self.nextPage = res.pagination.next_page;
+		if (cb) cb(res.data);
+	});
+
+};
+
+Store.prototype.fetchAsset = function(albumId, id, cb) {
+
+	var self = this;
+
+	request
+	.get(this.api + '/albums/' + albumId + '/assets/' + id)
+	.end(function(res) {
+		var res = JSON.parse(res.text);
+		self.asset = res.data;
 		if (cb) cb(res.data);
 	});
 

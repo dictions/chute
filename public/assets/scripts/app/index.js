@@ -1,5 +1,5 @@
 var Router = require('director').Router;
-var router = new Router().configure({
+var router = window.router = new Router().configure({
 	html5history: true
 });
 
@@ -11,6 +11,12 @@ var router = new Router().configure({
 
 router.on('/albums/:id', function (id) {
 	window.app.view.albumId = id;
+	window.app.view.previewAsset = null;
+});
+
+router.on('/albums/:id/:preview', function (id, preview) {
+	window.app.view.albumId = id;
+	window.app.view.previewAsset = preview;
 });
 
 
@@ -32,6 +38,7 @@ window.app.init = function() {
 		el: '#app',
 		data: {
 			albumId: null,
+			previewAsset: null,
 			album: {
 				user: null,
 			}
