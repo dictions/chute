@@ -6,6 +6,7 @@ var path = require('path');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var uglifyCSS = require('gulp-uglifycss');
 var livereload = require('gulp-livereload');
 var httpServer = require('http-server');
 // JS browserify stuff
@@ -85,6 +86,18 @@ gulp.task('watch', function(){
 		gutil.log(gutil.colors.yellow(event.path), 'changed');
 	});
 	
+});
+
+gulp.task('uglify', function() {
+	gulp.src('./public/assets/scripts/built/index.js')
+		.pipe(concat('index.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./public/assets/scripts/built/'));
+
+	gulp.src('./public/assets/styles/css/main.css')
+		.pipe(concat('main.min.css'))
+		.pipe(uglifyCSS())
+		.pipe(gulp.dest('./public/assets/styles/css'));
 });
 
 /**

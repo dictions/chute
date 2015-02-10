@@ -27,6 +27,7 @@
   "dependencies": {
     "components-webfontloader": "^1.5.2",
     "director": "^1.2.8",
+    "gulp-uglifycss": "^1.0.4",
     "masonry-layout": "^3.2.1",
     "moment": "^2.9.0",
     "superagent": "^0.21.0",
