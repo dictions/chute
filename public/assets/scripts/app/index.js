@@ -33,32 +33,7 @@ window.app = {};
 window.app.init = function() {
 
 	this.data = require('./store');
-
-	this.view = new Vue({
-		el: '#app',
-		data: {
-			albumId: null,
-			previewAsset: null,
-			album: {
-				user: null,
-			}
-		},
-		components: {
-			assets: require('./views/Assets'),
-			header: require('./views/Header'),
-		},
-		watch: {
-			albumId: 'fetchAlbum'
-		},
-		methods: {
-			fetchAlbum: function() {
-				var self = this;
-				if (this.albumId) window.app.data.fetchAlbum(this.albumId, function() {
-					self.album = window.app.data.album
-				});
-			},
-		}
-	});
+	this.view = require('./views/App');
 
 	router.init('/albums/aus6kwrg');
 }

@@ -11,6 +11,9 @@
 
 	[ch-asset-image] {
 		position: relative;
+		height: 0;
+		padding-bottom: 100%;
+		background: rgb(220, 220, 220);
 
 		> img {
 			width: 100%;
