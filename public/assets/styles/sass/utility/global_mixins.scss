@@ -73,13 +73,13 @@
 }
 
 
-@mixin transform($transform-content) {
+@mixin transform($transform-content...) {
 	-webkit-transform: $transform-content;
 		-ms-transform: $transform-content;
 			transform: $transform-content;
 }
 
-@mixin transition($transition-content) {
+@mixin transition($transition-content...) {
 	-webkit-transition: $transition-content;
 			transition: $transition-content;
 }

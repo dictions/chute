@@ -1,11 +1,13 @@
 [ch-asset-container] {
-	margin: 0.5rem;
+	margin: 2rem;
 	margin-bottom: 6rem;
 }
 
 [ch-asset] {
-	@include transition(300ms all ease);
+	@include transition(300ms all cubic-bezier(0.86, 0, 0.07, 1), 300ms opacity linear);
 	overflow: hidden;
+	font-size: 0.875rem;
+	line-height: 1.4em;
 
 	[ch-asset-image] {
 		position: relative;
@@ -26,7 +28,7 @@
 			color: white;
 
 			@include transform(translate3d(-50%, -40%, 0));
-			@include transition(200ms ease all);
+			@include transition(200ms all ease);
 			opacity: 0;
 
 			img {
@@ -46,7 +48,7 @@
 	}
 
 	[ch-asset-border] {
-		margin: 0.5rem;
+		margin: 1rem;
 		border: 1px solid rgb(220, 220, 220);
 		overflow: hidden;
 		@include border-radius(3px);
@@ -92,15 +94,21 @@
 
 	width: 100%;
 
-	@media (min-width: 480px) {
+	@media (min-width: 600px) {
 		width: 50%;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 960px) {
 		width: 33%;
 	}
 
 	@media (min-width: 1024px) {
 		width: 25%;
 	}
+}
+
+[ch-asset-loaded] {
+	margin: 6rem 0;
+	text-align: center;
+	opacity: 0.5;
 }

@@ -31,7 +31,7 @@ Store.prototype.fetchAssets = function(id, cb) {
 	var self = this;
 
 	request
-	.get(this.api + '/albums/' + id + '/assets?per_page=10')
+	.get(this.api + '/albums/' + id + '/assets?per_page=20')
 	.end(function(res) {
 		var res = JSON.parse(res.text);
 		self.assets = res.data;

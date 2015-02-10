@@ -8,7 +8,7 @@
 	<script type="text/javascript" src="/assets/scripts/built/index.js" async></script>
 </head>
 <body id="app">
-	<div v-component="header" v-with="albumId: albumId"></div>
-	<div v-component="assets" v-with="albumId: albumId"></div>
+	<div v-component="header" v-with="albumId: albumId, album: album"></div>
+	<div v-component="assets" v-with="albumId: albumId, imageCount: album.images_count"></div>
 </body>
 </html>

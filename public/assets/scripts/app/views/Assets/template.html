@@ -3,7 +3,7 @@
 		<div ch-asset-border>
 
 			<div ch-asset-image>
-				<img v-attr="src: url + '/w/200'" v-asset="url: asset">
+				<img v-attr="src: url + '/w/360'" v-asset="url: asset">
 				<p>
 					<img src="/assets/images/heart.svg"> 
 					<span>{{hearts}}</span>
@@ -13,7 +13,7 @@
 
 			<div ch-asset-content>
 
-				<p v-html="caption | caption | hashtag"></p>
+				<p v-html="caption | trim | hashtag"></p>
 
 				<div ch-media ch-asset-user>
 					<img v-attr="src: account.avatar" v-asset="account.avatar: avatar">
@@ -27,3 +27,11 @@
 		</div>
 	</li>
 </ul>
+
+<div v-if="loading && !allLoaded" ch-asset-loaded>
+	<h1>Loading more images ...</h1>
+</div>
+
+<div v-if="allLoaded" ch-asset-loaded>
+	<h1>All images loaded</h1>
+</div>

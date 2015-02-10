@@ -6,7 +6,7 @@ module.exports = {
 		this.el.addEventListener('error', function(e) {
 			switch (self.expression) {
 				case 'avatar':
-					self.el.src = '//placehold.it/100x100';
+					self.el.src = 'http://images.ak.instagram.com/profiles/anonymousUser.jpg';
 					break;
 				case 'asset':
 					self.el.src = '//placehold.it/360x360';
